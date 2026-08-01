@@ -5,11 +5,11 @@ import { fetchModels } from "../api/fetchModels.js";
 const modelsPromise = fetchModels(); // called once — stable Promise for use()
 import { Spinner } from "./Spinner.js";
 
-interface Props {
+interface ModelSelectProps {
   onSelect: (modelId: string) => void;
 }
 
-const ModelList = ({ onSelect }: Props) => {
+const ModelList = ({ onSelect }: ModelSelectProps) => {
   const models = use(modelsPromise);
   const [cursor, setCursor] = useState(0);
 
@@ -45,7 +45,7 @@ const ModelList = ({ onSelect }: Props) => {
   );
 };
 
-export const ModelSelect = ({ onSelect }: Props) => (
+export const ModelSelect = ({ onSelect }: ModelSelectProps) => (
   <Suspense fallback={<Spinner label="Loading models…" />}>
     <ModelList onSelect={onSelect} />
   </Suspense>
