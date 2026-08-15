@@ -1,0 +1,22 @@
+# ── Slidev build output ───────────────────────────
+dist/
+.slidev/
+
+# ── Exported slides (generated, not source) ───────
+*.pdf
+*.png
+*.pptx
+
+# ── Source assets in public/ are not generated ───
+!public/**/*.png
+!public/**/*.webp
+
+# ── Node ──────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Playwright (used for export) ──────────────────
+test-results/
+playwright-report/

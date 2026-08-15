@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+/* ── Global font override ─────────────────────────────────── */
+.slidev-layout,
+.slidev-layout *,
+.slidev-code,
+pre,
+code,
+kbd {
+  font-family:
+    "JetBrains Mono", "SF Mono", "Fira Code", "Cascadia Code", monospace !important;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes type-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-right {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ── Cursor helper ────────────────────────────────────────── */
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+  display: inline-block;
+}
+
+/* ── TUI list / autocomplete helpers ─────────────────────── */
+.tui-box {
+  border: 1px solid #3d5940;
+  font-family: "JetBrains Mono", monospace;
+  background: #0c0f0c;
+}
+
+/* ── Slide-wide body text ─────────────────────────────────── */
+.slidev-layout p,
+.slidev-layout li {
+  color: #c8dec4;
+  line-height: 1.6;
+}
+
+/* ── Code blocks ─────────────────────────────────────────── */
+.slidev-layout .shiki {
+  background: #0c0f0c !important;
+  border: 1px solid #3d5940;
+  border-radius: 6px;
+}
+
+/* ── Slide transition (already slide-left, reinforce) ──────── */
+.slidev-vclick-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Status bar clearance for all slides ─────────────────── */
+.slidev-layout {
+  padding-bottom: 36px !important;
+  padding-top: 2rem !important;
+}
+
+/* But not on the cover */
+.slidev-layout.cover {
+  padding-bottom: 0 !important;
+}
+
+/* ── Title → content gap on all content slides ───────────── */
+.slidev-layout:not(.cover):not(.aboutme) h2 {
+  margin-top: -15px !important;
+  margin-bottom: 30px !important;
+}
+
+.slidev-layout:not(.cover):not(.aboutme) h1 {
+  margin-top: -15px !important;
+  margin-bottom: 30px !important;
+}
+
+/* ── Terminal-prompt titles: ❯ Title█ ────────────────────── */
+/* Prefix ❯ and a blinking block cursor, plus a left→right
+   clip-path wipe on every slide enter to mimic typing.       */
+.slidev-layout:not(.cover):not(.aboutme) h2::before {
+  content: "❯ ";
+  color: #3cff7a;
+  font-weight: 400;
+}
+
+.slidev-layout:not(.cover):not(.aboutme) h2::after {
+  content: "█";
+  color: #3cff7a;
+  margin-left: 6px;
+  font-weight: 400;
+  animation: cursor-blink-once 0.9s step-end 1 forwards;
+  animation-delay: 0.55s;
+}
+
+.slidev-layout:not(.cover):not(.aboutme) h2 {
+  animation: h2-type-in 0.55s linear both !important;
+}
+
+@keyframes h2-type-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@keyframes cursor-blink-once {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
