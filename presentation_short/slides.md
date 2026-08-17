@@ -70,43 +70,51 @@ Cover: the presentation boots as a React terminal app. Don't say anything. Just 
 -->
 
 ---
+
 layout: cover
 class: p-0
+
 ---
 
 <VideoFullscreen :src="'/intro-video.mp4'" />
 
 ---
+
 layout: cover
 class: p-0
+
 ---
 
 <VideoFullscreen :src="'/intro-video-2.mp4'" />
 
 ---
-src: ./pages/why-react.md
----
+
+## src: ./pages/aboutme.md
 
 ---
-src: ./pages/block2-context-short.md
----
+
+## src: ./pages/why-react.md
 
 ---
-src: ./pages/live-demo-bridge.md
----
+
+## src: ./pages/block2-context-short.md
 
 ---
-src: ./pages/live-demo-integrated.md
----
+
+## src: ./pages/live-demo-bridge.md
 
 ---
-src: ./pages/block5-optimization.md
----
+
+## src: ./pages/live-demo-integrated.md
 
 ---
-src: ./pages/block7-when.md
----
+
+## src: ./pages/block5-optimization.md
 
 ---
-src: ./pages/block8-close.md
+
+## src: ./pages/block7-when.md
+
 ---
+
+## src: ./pages/block8-close.md
