@@ -14,7 +14,7 @@ No separate "here's the API" section - learn by doing.
 
 ---
 
-## layout: two-cols
+layout: two-cols
 
 ## The Ink API (Quick Intro)
 
@@ -61,7 +61,7 @@ Quick 1-minute overview. Don't deep dive - you'll explain as you code.
 
 ---
 
-## layout: center
+layout: center
 
 ## Start Skeleton
 
@@ -94,7 +94,7 @@ Show the start folder, briefly explain structure.
 
 ---
 
-## layout: default
+layout: default
 
 ## Step 1: Spinner (2 min)
 
@@ -135,7 +135,7 @@ Run it: "And there's our animated spinner!"
 
 ---
 
-## layout: default
+layout: default
 
 ## Step 2: Model Selection (3 min)
 
@@ -184,7 +184,7 @@ Demo: Show arrow keys working, selection working
 
 ---
 
-## layout: default
+layout: default
 
 ## Step 3: Text Input (3 min)
 
@@ -234,7 +234,7 @@ Demo: Type some text, show @ file picker
 
 ---
 
-## layout: default
+layout: default
 
 ## Step 4: Chat with Streaming (5 min)
 
@@ -315,7 +315,7 @@ This is the complex one - take your time to explain clearly.
 
 ---
 
-## layout: center
+layout: center
 
 ## Demo Time! (3 min)
 
@@ -380,7 +380,7 @@ Same React you already know. Just a different renderer."
 
 ---
 
-## layout: center
+layout: center
 
 ## What You Just Saw
 

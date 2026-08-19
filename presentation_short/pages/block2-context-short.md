@@ -19,10 +19,8 @@ clicks: 6
 -->
 
 ---
-
 layout: center
 clicks: 6
-
 ---
 
 ## The terminal has no DOM
@@ -44,10 +42,8 @@ STREAMLINED VERSION: Faster explanation, focus on key concept
 -->
 
 ---
-
 layout: center
 clicks: 3
-
 ---
 
 ## ANSI Escape Sequences (Quick)
