@@ -31,7 +31,7 @@
       </div>
 
       <!-- Logos — centered below avatar + info -->
-     
+
     </TerminalFrame>
   </div>
 </template>
@@ -47,8 +47,7 @@ const infoRows = [
     cls: "val-blue",
   },
   { key: "role      ", val: "Senior Fullstack Engineer" },
-  { key: "host      ", val: "Client Core" },
-  { key: "style     ", val: "Carving" },
+  { key: "host      ", val: "Client Core - Consumer" },
 ];
 </script>
 

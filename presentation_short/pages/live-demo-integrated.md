@@ -94,9 +94,7 @@ Show the start folder, briefly explain structure.
 
 ---
 
-layout: default
-
-## Step 1: Spinner (2 min)
+### Step 1: Spinner (2 min)
 
 ```tsx {all|3|5-8|10-14}
 import { Text, useEffect, useState } from "ink";
@@ -135,9 +133,8 @@ Run it: "And there's our animated spinner!"
 
 ---
 
-layout: default
 
-## Step 2: Model Selection (3 min)
+### Step 2: Model Selection (3 min)
 
 ```tsx {all|1|4|5|7-11|13-24}
 // Stable promise - called once at module level
@@ -184,9 +181,8 @@ Demo: Show arrow keys working, selection working
 
 ---
 
-layout: default
 
-## Step 3: Text Input (3 min)
+#### Step 3: Text Input (3 min)
 
 ```tsx {all|3|4|6-16|18-28}
 export const TextInput = ({ onSubmit }) => {
@@ -234,9 +230,7 @@ Demo: Type some text, show @ file picker
 
 ---
 
-layout: default
-
-## Step 4: Chat with Streaming (5 min)
+#### Step 4: Chat with Streaming (5 min)
 
 ```tsx {all|2|5|7-9|11-22|24-35}
 export const Chat = ({ model }) => {
@@ -317,7 +311,7 @@ This is the complex one - take your time to explain clearly.
 
 layout: center
 
-## Demo Time! (3 min)
+### Demo Time! (3 min)
 
 <div class="demo-box">
   Run the completed app
@@ -380,9 +374,7 @@ Same React you already know. Just a different renderer."
 
 ---
 
-layout: center
-
-## What You Just Saw
+### What You Just Saw
 
 <div class="recap-grid">
   <div class="recap-item">
