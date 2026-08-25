@@ -88,33 +88,33 @@ class: p-0
 <VideoFullscreen :src="'/intro-video-2.mp4'" />
 
 ---
-
-## src: ./pages/aboutme.md
-
+src: ./pages/aboutme.md
 ---
 
-## src: ./pages/why-react.md
-
+---
+src: ./pages/why-react.md
 ---
 
-## src: ./pages/block2-context-short.md
-
+---
+src: ./pages/block2-context-short.md
 ---
 
-## src: ./pages/live-demo-bridge.md
-
+---
+src: ./pages/live-demo-bridge.md
 ---
 
-## src: ./pages/live-demo-integrated.md
-
+---
+src: ./pages/live-demo-integrated.md
 ---
 
-## src: ./pages/block5-optimization.md
-
+---
+src: ./pages/block5-optimization.md
 ---
 
-## src: ./pages/block7-when.md
-
+---
+src: ./pages/block7-when.md
 ---
 
-## src: ./pages/block8-close.md
+---
+src: ./pages/block8-close.md
+---

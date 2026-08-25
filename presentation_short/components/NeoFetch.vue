@@ -31,14 +31,7 @@
       </div>
 
       <!-- Logos — centered below avatar + info -->
-      <div class="logos-row">
-        <img src="/images/imagen-logo.svg" alt="Imagen" class="logo-img" />
-        <img
-          src="/images/lotechi-logo.webp"
-          alt="Lo-Techni"
-          class="logo-img lotechi-logo"
-        />
-      </div>
+     
     </TerminalFrame>
   </div>
 </template>
@@ -50,12 +43,12 @@ const infoRows = [
   { key: "name      ", val: "Avraham Hamu", cls: "val-green" },
   {
     key: "loves to  ",
-    val: "Empower people & build products",
+    val: "Explore new tech. & snowboard 🏂",
     cls: "val-blue",
   },
   { key: "role      ", val: "Senior Fullstack Engineer" },
   { key: "host      ", val: "Client Core" },
-  { key: "style     ", val: "Non native Hebrew accent" },
+  { key: "style     ", val: "Carving" },
 ];
 </script>
 
