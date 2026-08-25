@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text } from "ink";
 
-const ISRAEL = [
+export const ISRAEL = [
   "██╗███████╗██████╗  █████╗ ███████╗██╗     ",
   "██║██╔════╝██╔══██╗██╔══██╗██╔════╝██║     ",
   "██║███████╗██████╔╝███████║█████╗  ██║     ",
@@ -10,7 +10,7 @@ const ISRAEL = [
   "╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝",
 ];
 
-const IsraeliFlag: React.FC = () => (
+export const IsraeliFlag: React.FC = () => (
   <Box flexDirection="column" marginLeft={3}>
     {/* Top blue stripe */}
     <Text color="blue">{"═════════════════════════"}</Text>

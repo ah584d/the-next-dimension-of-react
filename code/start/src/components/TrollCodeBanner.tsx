@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Text } from "ink";
+import { ISRAEL, IsraeliFlag } from "./il.js";
 
 const TROLL = [
   "████████╗██████╗  ██████╗ ██╗     ██╗     ",
@@ -61,7 +62,7 @@ export const TrollCodeBanner: React.FC = () => (
   <Box flexDirection="column" paddingLeft={1}>
     <Box flexDirection="row" alignItems="flex-start">
       <Box flexDirection="column">
-        {TROLL.map((line, i) => (
+        {ISRAEL.map((line, i) => (
           <Text key={i} color="green">
             {line}
           </Text>
@@ -72,7 +73,8 @@ export const TrollCodeBanner: React.FC = () => (
           </Text>
         ))}
       </Box>
-      <TrollDoll />
+      {/* <TrollDoll /> */}
+      <IsraeliFlag />
     </Box>
     <Box marginTop={1}>
       <Text dimColor>React in your terminal</Text>
