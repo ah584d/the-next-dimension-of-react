@@ -1,15 +1,17 @@
-import { useState, useTransition } from "react";
+import  { useState, useTransition } from "react";
 import { Box, Text, Static, useInput, useApp } from "ink";
 import { TextInput } from "./TextInput.js";
 import { Spinner } from "./Spinner.js";
 import { useStream } from "../hooks/useStream.js";
 import { Message, StaticItem } from "../utils/types.js";
 import { Header, MessageRow } from "./Header.js";
-interface ChatWithModelProps {
+import { TextInputAttachment } from "./TextInputAttachment.js";
+
+interface ChatWithAttachmentProps {
   model: string;
 }
 
-export const ChatWithModel = ({ model }: ChatWithModelProps) => {
+export const ChatWithAttachment = ({ model }: ChatWithAttachmentProps) => {
   const { exit } = useApp();
   const [messages, setMessages] = useState<Message[]>([]);
   const { content, error, send } = useStream(model);
@@ -19,12 +21,16 @@ export const ChatWithModel = ({ model }: ChatWithModelProps) => {
     if (input === "q" && !isPending) exit();
   });
 
-  const handleSubmit = (value: string) => {
+  const handleSubmit = (value: string, attachments: Record<string, unknown>) => {
     if (!value.trim() || isPending) return;
+
+     const fileContext = Object.entries(attachments)
+      .map(([name, content]) => `<file name="${name}">\n${content}\n</file>`)
+      .join("\n");
 
     const userMsg: Message = {
       role: "user",
-      content: value,
+      content: fileContext ? `${fileContext}\n\n${value}` : value,
       displayText: value,
     };
 
@@ -68,7 +74,7 @@ export const ChatWithModel = ({ model }: ChatWithModelProps) => {
       )}
 
       {error && <Text color="red">Error: {error.message}</Text>}
-      {!isPending && <TextInput onSubmit={handleSubmit} />}
+      {!isPending && <TextInputAttachment onSubmit={handleSubmit} />}
     </Box>
   );
 };

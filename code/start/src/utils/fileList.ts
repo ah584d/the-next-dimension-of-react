@@ -35,6 +35,9 @@ async function fetchFiles(query: string): Promise<string[]> {
     })),
   );
 
+  // readdir omits "." / "..", so inject ".." to let users drill upward.
+  entries.unshift({ name: "..", isDir: true });
+
   return entries
     .filter((e) => e.name.toLowerCase().includes(filter.toLowerCase()))
     .sort((a, b) => Number(b.isDir) - Number(a.isDir)) // dirs first

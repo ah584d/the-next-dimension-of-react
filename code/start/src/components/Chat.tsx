@@ -1,44 +1,9 @@
-import React, { startTransition, useState } from "react";
+import { useState } from "react";
 import { Box, Static, Text, useApp } from "ink";
 import { useStream } from "../hooks/useStream.js";
 import { TextInput } from "./TextInput.js";
-import { Spinner } from "./Spinner.js";
-
-export interface Message {
-  role: "user" | "assistant";
-  content: string;
-  displayText?: string;
-}
-
-type StaticItem = { type: "header" } | { type: "message"; msg: Message };
-
-// ── Sub-components ────────────────────────────────────────────────────────────
-
-const Header = ({ model }: { model: string }) => (
-  <Box borderStyle="round" borderColor="cyan" paddingX={2} marginBottom={1}>
-    <Text bold color="cyan">
-      AI Terminal{" "}
-    </Text>
-    <Text dimColor>model: {model} · q to quit</Text>
-  </Box>
-);
-
-const MessageRow = ({ msg }: { msg: Message }) => (
-  <Box marginBottom={1} flexDirection="column">
-    <Text color={msg.role === "user" ? "yellow" : "green"} bold>
-      {msg.role === "user" ? "You" : "AI"}
-    </Text>
-    <Box paddingLeft={2}>
-      {msg.content ? (
-        <Text>{msg.displayText ?? msg.content}</Text>
-      ) : (
-        <Spinner />
-      )}
-    </Box>
-  </Box>
-);
-
-// ── Main component ────────────────────────────────────────────────────────────
+import { Message, StaticItem } from "../utils/types.js";
+import { Header, MessageRow } from "./Header.js";
 
 interface ChatProps {
   model: string;

@@ -1,6 +1,6 @@
-import React, { useState, use, Suspense } from "react";
+import { useState, use, Suspense } from "react";
 import { Box, Text, useInput } from "ink";
-import { fetchModels, fetchModelsFn } from "../api/fetchModels.js";
+import { fetchModels } from "../api/fetchModels.js";
 
 import { Spinner } from "./Spinner.js";
 

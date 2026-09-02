@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text } from "ink";
-import { ISRAEL, IsraeliFlag } from "./il.js";
+import { ISRAEL, IsraeliFlag } from "./Israel.js";
 
 const CODE = [
   " ██████╗ ██████╗ ██████╗ ███████╗",

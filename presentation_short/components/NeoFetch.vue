@@ -43,7 +43,7 @@ const infoRows = [
   { key: "name      ", val: "Avraham Hamu", cls: "val-green" },
   {
     key: "loves to  ",
-    val: "Explore new tech. & snowboard 🏂",
+    val: "Explore new tech. & running 🏃‍♂️‍➡️🏃‍♂️‍➡️",
     cls: "val-blue",
   },
   { key: "role      ", val: "Senior Fullstack Engineer" },
