@@ -3,6 +3,7 @@ import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { Message } from "../components/Chat.js";
 
+// ── Hook: it is a wrapper of ai sdk of vercel, it accumulates messages and returns the final text when the stream is done
 export const useStream = (model = "gpt-4o-mini") => {
   const [content, setContent] = useState("");
   const [error, setError] = useState<Error | null>(null);

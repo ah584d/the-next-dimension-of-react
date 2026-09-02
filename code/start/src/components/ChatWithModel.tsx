@@ -1,8 +1,8 @@
-import React, { startTransition, useState } from "react";
-import { Box, Static, Text, useApp } from "ink";
-import { useStream } from "../hooks/useStream.js";
+import React, { useState, useTransition } from "react";
+import { Box, Text, Static, useInput, useApp } from "ink";
 import { TextInput } from "./TextInput.js";
 import { Spinner } from "./Spinner.js";
+import { useStream } from "../hooks/useStream.js";
 
 export interface Message {
   role: "user" | "assistant";
@@ -40,27 +40,43 @@ const MessageRow = ({ msg }: { msg: Message }) => (
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-interface ChatProps {
+interface Props {
   model: string;
 }
 
-export const Chat = ({ model }: ChatProps) => {
+export const ChatWithModel = ({ model }: Props) => {
   const { exit } = useApp();
   const [messages, setMessages] = useState<Message[]>([]);
   const { content, error, send } = useStream(model);
+  const [isPending, startTransition] = useTransition();
 
-  // STEP 4: accumulate the content from the stream into the messages state
+  useInput((input) => {
+    if (input === "q" && !isPending) exit();
+  });
+
   const handleSubmit = (value: string, attachments: Record<string, string>) => {
-    if (!value.trim()) return;
+    if (!value.trim() || isPending) return;
+
+    const fileContext = Object.entries(attachments)
+      .map(([name, content]) => `<file name="${name}">\n${content}\n</file>`)
+      .join("\n");
 
     const userMsg: Message = {
       role: "user",
-      content: value,
-      // displayText: value,
+      content: fileContext ? `${fileContext}\n\n${value}` : value,
+      displayText: value,
     };
 
     const nextMessages = [...messages, userMsg];
     setMessages(nextMessages);
+
+    startTransition(async () => {
+      const finalText = await send(nextMessages);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: finalText },
+      ]);
+    });
   };
 
   return (
@@ -79,7 +95,19 @@ export const Chat = ({ model }: ChatProps) => {
         }}
       </Static>
 
-      <TextInput onSubmit={handleSubmit} />
+      {isPending && (
+        <Box flexDirection="column" marginBottom={1}>
+          <Text color="green" bold>
+            AI
+          </Text>
+          <Box paddingLeft={2}>
+            {content ? <Text>{content}</Text> : <Spinner />}
+          </Box>
+        </Box>
+      )}
+
+      {error && <Text color="red">Error: {error.message}</Text>}
+      {!isPending && <TextInput onSubmit={handleSubmit} />}
     </Box>
   );
 };
