@@ -10,7 +10,7 @@ interface ModelListProps {
 
 const ModelList = ({ onSelect }: ModelListProps) => {
   // STEP 1: Implement the Spinner Component
-  //return <Spinner />;
+ // return <Spinner />;
 
   // DEMO: STEP 2 - Implement the ModelList component
   const models = use(fetchModels);
@@ -39,14 +39,16 @@ const ModelList = ({ onSelect }: ModelListProps) => {
         <Box key={model.id}>
           {/* <Text color={"green"}>{model.label}</Text> */}
 
+          {/* DEMO: STEP 3.2  - Implement the cursor highlight */}
+
           <Box>
-            {/* DEMO: STEP 3.2  - Implement the cursor highlight */}
             <Text color={i === cursor ? "green" : undefined}>
-            {i === cursor ? "❯ " : "  "}
-            {model.label}
-          </Text>
-            {/* DEMO: END STEP 3.2 */}
+              {i === cursor ? "❯ " : "  "}
+              {model.label}
+            </Text>
           </Box>
+
+          {/* DEMO: END STEP 3.2 */}
         </Box>
       ))}
       <Box marginTop={1}>

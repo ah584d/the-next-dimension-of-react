@@ -1,6 +1,5 @@
 import  { useState, useTransition } from "react";
 import { Box, Text, Static, useInput, useApp } from "ink";
-import { TextInput } from "./TextInput.js";
 import { Spinner } from "./Spinner.js";
 import { useStream } from "../hooks/useStream.js";
 import { Message, StaticItem } from "../utils/types.js";

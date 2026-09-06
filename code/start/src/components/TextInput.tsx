@@ -30,16 +30,8 @@ export const TextInput = ({ onSubmit }: Props) => {
       <Box>
         <Text color="green">❯ </Text>
         <Text>{value}</Text>
-        {/* {isReading && <Text color="yellow"> reading…</Text>}
-        {!isReading && Object.keys(attachments).length > 0 && (
-          <Text color="yellow"> [{Object.keys(attachments).join(", ")}]</Text>
-        )} */}
         <Text color="green">█</Text>
       </Box>
-
-      {/* {filePicker.active && (
-        <FilePicker query={filePicker.query} cursor={filePicker.cursor} />
-      )} */}
     </Box>
   );
   // DEMO: END STEP 4

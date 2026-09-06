@@ -12,16 +12,14 @@ interface ChatProps {
 export const Chat = ({ model }: ChatProps) => {
   const { exit } = useApp();
   const [messages, setMessages] = useState<Message[]>([]);
-  const { content, error, send } = useStream(model);
 
   // STEP 4: accumulate the content from the stream into the messages state
-  const handleSubmit = (value: string, attachments: Record<string, string>) => {
+  const handleSubmit = (value: string) => {
     if (!value.trim()) return;
 
     const userMsg: Message = {
       role: "user",
       content: value,
-      // displayText: value,
     };
 
     const nextMessages = [...messages, userMsg];
@@ -46,5 +44,9 @@ export const Chat = ({ model }: ChatProps) => {
 
       <TextInput onSubmit={handleSubmit} />
     </Box>
+
+
+      // <TextInput onSubmit={handleSubmit} />
+
   );
 };
