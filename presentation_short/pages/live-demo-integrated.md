@@ -13,55 +13,8 @@ No separate "here's the API" section - learn by doing.
 -->
 
 ---
-
-layout: two-cols
-
-## The Ink API (Quick Intro)
-
-Three primitives:
-
-```tsx
-import { Box, Text, useInput } from 'ink';
-
-<Box>              {/* = <div> with flexbox */}
-<Text>             {/* = <span> with text */}
-useInput()         {/* = keyboard events */}
-```
-
-React hooks work normally:
-
-- `useState`, `useEffect`, `useTransition`
-- `use()`, `Suspense` (React 19)
-
-::right::
-
-```tsx
-// Looks like React, works like React
-function MyComponent() {
-  const [count, setCount] = useState(0);
-
-  useInput((input, key) => {
-    if (key.upArrow) setCount((c) => c + 1);
-    if (key.downArrow) setCount((c) => c - 1);
-  });
-
-  return (
-    <Box flexDirection="column">
-      <Text color="cyan">Count: {count}</Text>
-      <Text dimColor>↑/↓ to change</Text>
-    </Box>
-  );
-}
-```
-
-<!--
-Quick 1-minute overview. Don't deep dive - you'll explain as you code.
-"If you know React, this will feel familiar. Let's build something."
--->
-
----
-
 layout: center
+---
 
 ## Start Skeleton
 
@@ -133,7 +86,6 @@ Run it: "And there's our animated spinner!"
 
 ---
 
-
 ### Step 2: Model Selection (3 min)
 
 ```tsx {all|1|4|5|7-11|13-24}
@@ -180,7 +132,6 @@ Demo: Show arrow keys working, selection working
 -->
 
 ---
-
 
 #### Step 3: Text Input (3 min)
 
@@ -308,8 +259,8 @@ This is the complex one - take your time to explain clearly.
 -->
 
 ---
-
 layout: center
+---
 
 ### Demo Time! (3 min)
 

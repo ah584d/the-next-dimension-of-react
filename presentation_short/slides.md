@@ -70,19 +70,15 @@ Cover: the presentation boots as a React terminal app. Don't say anything. Just 
 -->
 
 ---
-
 layout: cover
 class: p-0
-
 ---
 
 <VideoFullscreen :src="'/intro-video.mp4'" />
 
 ---
-
 layout: cover
 class: p-0
-
 ---
 
 <VideoFullscreen :src="'/intro-video-2.mp4'" />
@@ -92,7 +88,23 @@ src: ./pages/aboutme.md
 ---
 
 ---
+src: ./pages/run-1.md
+---
+
+---
+src: ./pages/run-2.md
+---
+
+---
+src: ./pages/run-3.md
+---
+
+---
 src: ./pages/why-react.md
+---
+
+---
+src: ./pages/why-react-proof.md
 ---
 
 ---
@@ -118,3 +130,4 @@ src: ./pages/block7-when.md
 ---
 src: ./pages/block8-close.md
 ---
+
