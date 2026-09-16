@@ -10,12 +10,12 @@ interface ModelListProps {
 
 const ModelList = ({ onSelect }: ModelListProps) => {
   // STEP 1: Implement the Spinner Component
- // return <Spinner />;
+  // return <Spinner />;
 
   // DEMO: STEP 2 - Implement the ModelList component
   const models = use(fetchModels);
 
-  // DEMO: STEP 3.1 - Implement the cursor state and input handling
+  // // DEMO: STEP 3.1 - Implement the cursor state and input handling
   const [cursor, setCursor] = useState(0);
   useInput((_input, key) => {
     if (key.upArrow) setCursor((prev) => Math.max(0, prev - 1));

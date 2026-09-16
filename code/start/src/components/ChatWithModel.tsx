@@ -12,7 +12,7 @@ interface ChatWithModelProps {
 export const ChatWithModel = ({ model }: ChatWithModelProps) => {
   const { exit } = useApp();
   const [messages, setMessages] = useState<Message[]>([]);
-  const { content, error, send } = useStream(model);
+  const { content: streamContent, error, send } = useStream(model);
   const [isPending, startTransition] = useTransition();
 
   useInput((input) => {
@@ -62,7 +62,7 @@ export const ChatWithModel = ({ model }: ChatWithModelProps) => {
             AI
           </Text>
           <Box paddingLeft={2}>
-            {content ? <Text>{content}</Text> : <Spinner />}
+            {streamContent ? <Text>{streamContent}</Text> : <Spinner />}
           </Box>
         </Box>
       )}
